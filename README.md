@@ -1,6 +1,4 @@
-# Sil
-
-> Repository description: will be deleted soon
+#Finsaarthi
 
 A TypeScript project (primary language: TypeScript). This README provides setup, build, test, and contribution instructions. If any commands below do not match this repository's scripts, update them to match the project's package.json or build config.
 
