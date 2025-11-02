@@ -13,6 +13,10 @@ const initialData: FinSaarthiData = {
       role: 'admin',
       name: 'Admin User',
       createdAt: new Date().toISOString(),
+      photo: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face',
+      phone: '+91 98765 43210',
+      address: 'New Delhi, India',
+      education: 'MBA in Finance',
     },
     {
       id: 'student-1',
@@ -21,6 +25,12 @@ const initialData: FinSaarthiData = {
       role: 'student',
       name: 'Rahul Kumar',
       createdAt: new Date().toISOString(),
+      photo: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face',
+      phone: '+91 87654 32109',
+      address: 'Mumbai, Maharashtra, India',
+      education: 'B.Tech Computer Science, IIT Mumbai',
+      dateOfBirth: '2000-05-15',
+      resume: 'https://example.com/resume/rahul-kumar.pdf',
     }
   ],
   scholarships: [
@@ -109,6 +119,15 @@ export const useLocalStorage = () => {
     return data.users.find(user => user.id === id);
   };
 
+  const updateUser = (id: string, updates: Partial<User>) => {
+    setData(prev => ({
+      ...prev,
+      users: prev.users.map(user => 
+        user.id === id ? { ...user, ...updates } : user
+      )
+    }));
+  };
+
   // Scholarship operations
   const addScholarship = (scholarship: Omit<Scholarship, 'id' | 'createdAt'>) => {
     const newScholarship: Scholarship = {
@@ -191,6 +210,7 @@ export const useLocalStorage = () => {
     addUser,
     getUserByCredentials,
     getUserById,
+    updateUser,
     // Scholarship operations
     addScholarship,
     updateScholarship,

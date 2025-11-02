@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { Menu, X, Home, User, BookOpen, Settings, LogOut } from 'lucide-react';
+import { Menu, X, Home, User, BookOpen, Settings, LogOut, CircleUser as UserCircle } from 'lucide-react';
 
 export const Navigation: React.FC = () => {
   const { user, logout } = useAuth();
@@ -63,6 +63,10 @@ export const Navigation: React.FC = () => {
                     Admin
                   </a>
                 )}
+                <a href="/profile" className="text-gray-700 hover:text-orange-600 transition-colors flex items-center">
+                  <UserCircle className="w-4 h-4 mr-1" />
+                  Profile
+                </a>
                 <button
                   onClick={handleLogout}
                   className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-200"

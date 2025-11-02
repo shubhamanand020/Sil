@@ -5,6 +5,12 @@ export interface User {
   role: 'student' | 'admin';
   name: string;
   createdAt: string;
+  photo?: string;
+  resume?: string;
+  phone?: string;
+  address?: string;
+  education?: string;
+  dateOfBirth?: string;
 }
 
 export interface Scholarship {

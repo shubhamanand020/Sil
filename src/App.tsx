@@ -7,6 +7,7 @@ import { RegisterPage } from './pages/RegisterPage';
 import { StudentDashboard } from './pages/StudentDashboard';
 import { AdminPanel } from './pages/AdminPanel';
 import { ScholarshipsPage } from './pages/ScholarshipsPage';
+import { ProfilePage } from './pages/ProfilePage';
 
 function App() {
   // Simple client-side routing based on URL hash
@@ -61,6 +62,8 @@ function App() {
         return <AdminPanel />;
       case '/scholarships':
         return <ScholarshipsPage />;
+      case '/profile':
+        return <ProfilePage />;
       default:
         return <HomePage />;
     }
